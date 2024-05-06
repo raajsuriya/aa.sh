@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Poultry</h1>
+	<p>You can find their nutrients, scientific name and much more than you can possibly imagine.</p>
+	<h2>#
+	{% for i in range(plts|length) %}
+		{{i+1}}
+	{% endfor %}
+	</h2>
+	<div class='center'><table class='center'>
+		<tr>
+			<th>Name</th>
+			<th>Scientific</th>
+			<th>Nutrients</th>
+			<th>#</th>
+			<th>Cost/Unit</th>
+			<th>Location</th>
+		</tr>
+		{% for i in range(plts|length) %}
+		<tr>
+			<td>{{ plts[i].name }}</td>
+			<td>{{ plts[i].s_name }}</td>
+			<td>{{ plts[i].nutrition }}</td>
+			<td>{{ plts[i].quant }}</td>
+			<td>{{ plts[i].cperu }}</td>
+			<td>{{ plts[i].cloc }}</td>
+		</tr>
+		{% endfor %}
+	</table></div>
+{% endblock content %}

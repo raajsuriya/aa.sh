@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Botanicals</h1>
+	<p>You can find their nutrients, scientific name and much more than you can possibly imagine.</p>
+	<h2>#
+	{% for i in range(bots|length) %}
+		{{i+1}}
+	{% endfor %}
+	</h2>
+	<div class='center'><table class='center'>
+		<tr>
+			<th>Name</th>
+			<th>Scientific</th>
+			<th>Nutrients</th>
+			<th>#</th>
+			<th>Cost/Unit</th>
+			<th>Location</th>
+		</tr>
+		{% for i in range(bots|length) %}
+		<tr>
+			<td>{{ bots[i].name }}</td>
+			<td>{{ bots[i].s_name }}</td>
+			<td>{{ bots[i].nutrition }}</td>
+			<td>{{ bots[i].quant }}</td>
+			<td>{{ bots[i].cperu }}</td>
+			<td>{{ bots[i].cloc }}</td>
+		</tr>
+		{% endfor %}
+	</table></div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Vegan</h1>
+	<p>You can find their nutrients, scientific name and much more than you can possibly imagine.</p>
+	<h2>#
+	{% for i in range(vags|length) %}
+		{{i+1}}
+	{% endfor %}
+	</h2>
+	<div class='center'><table class='center'>
+		<tr>
+			<th>Name</th>
+			<th>Scientific</th>
+			<th>Nutrients</th>
+			<th>#</th>
+			<th>Cost/Unit</th>
+			<th>Location</th>
+		</tr>
+		{% for i in range(vags|length) %}
+		<tr>
+			<td>{{ vags[i].name }}</td>
+			<td>{{ vags[i].s_name }}</td>
+			<td>{{ vags[i].nutrition }}</td>
+			<td>{{ vags[i].quant }}</td>
+			<td>{{ vags[i].cperu }}</td>
+			<td>{{ vags[i].cloc }}</td>
+		</tr>
+		{% endfor %}
+	</table></div>
+{% endblock content %}

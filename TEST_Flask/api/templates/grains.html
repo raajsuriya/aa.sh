@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Grains</h1>
+	<p>You can find their nutrients, scientific name and much more than you can possibly imagine.</p>
+	<h2>#
+	{% for i in range(grns|length) %}
+		{{i+1}}
+	{% endfor %}
+	</h2>
+	<div class='center'><table class='center'>
+		<tr>
+			<th>Name</th>
+			<th>Scientific</th>
+			<th>Nutrients</th>
+			<th>#</th>
+			<th>Cost/Unit</th>
+			<th>Location</th>
+		</tr>
+		{% for i in range(grns|length) %}
+		<tr>
+			<td>{{ grns[i].name }}</td>
+			<td>{{ grns[i].s_name }}</td>
+			<td>{{ grns[i].nutrition }}</td>
+			<td>{{ grns[i].quant }}</td>
+			<td>{{ grns[i].cperu }}</td>
+			<td>{{ grns[i].cloc }}</td>
+		</tr>
+		{% endfor %}
+	</table></div>
+{% endblock content %}
